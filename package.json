@@ -1,0 +1,31 @@
+{
+  "name": "@rowasc/xs-gather-sdk",
+  "version": "0.0.1",
+  "description": "A small package to work with gather http APIs",
+  "main": "src/api/gather.ts",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rowasc/xs-gather-sdk.git"
+  },
+  "keywords": [
+    "gather.town",
+    "typescript",
+    "sdk"
+  ],
+  "author": "Romina Suarez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rowasc/xs-gather-sdk/issues"
+  },
+  "homepage": "https://github.com/rowasc/xs-gather-sdk#readme"
+}
