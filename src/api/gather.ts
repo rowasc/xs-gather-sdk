@@ -1,9 +1,9 @@
-import endpoints, {ConfigParam} from '../endpoints';
+import {Endpoints, ConfigParam} from '../endpoints';
 
 import axios from 'axios';
 
 export const api = (env: ConfigParam) => {
-    const config = endpoints(env);
+    const config = Endpoints(env);
     /**
      * @return Promise
      */

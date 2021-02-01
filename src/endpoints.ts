@@ -5,7 +5,7 @@ export interface ConfigParam {
     gatherMapId: string,
 }
 
-export default (config: ConfigParam) => {
+export const Endpoints = (config: ConfigParam) => {
     const generic_params_group = {
         params: {
             apiKey: config.gatherApiKey,
