@@ -12,7 +12,16 @@ export class Api {
      * @return Promise
      */
     getMap = () => {
-        return axios.get(this.config.getMap.url, { params: this.config.getMap.params })
+        return axios.get(
+            this.config.getMap.url,
+            { params: this.config.getMap.params }
+            )
+            .catch((e) => {
+                return {
+                    error: e,
+                    source: `gather.getMap`
+                }
+            });
     }
 
     /**
@@ -26,7 +35,12 @@ export class Api {
         return axios.post(this.config.setMap.url, {
             ...this.config.setMap.params,
             mapContent: mapData
-        });
+        }).catch((e) => {
+            return {
+                error: e,
+                source: `gather.setMap`
+            }
+        })
     }
 
     /**
@@ -42,6 +56,11 @@ export class Api {
                     spaceId: this.config.uploadImages.params.spaceId,
                 },
                 { maxContentLength: Infinity, maxBodyLength: Infinity }
-            );
+            ).catch((e) => {
+                return {
+                    error: e,
+                    source: `gather.uploadImages`
+                }
+            });
     }
 }
