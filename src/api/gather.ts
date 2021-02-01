@@ -63,4 +63,16 @@ export class Api {
                 }
             });
     }
+    /**
+     *
+     * @param objects
+     */
+    updateMap = (objects) => {
+        return this.getMap()
+            .then((result) => {
+                return this.setMap(result, objects);
+            }).catch((e) => {
+              return {error: e, source: 'gather.updateMap'};
+            })
+    };
 }
