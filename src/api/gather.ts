@@ -2,13 +2,17 @@ import {Endpoints, ConfigParam} from '../endpoints';
 
 import axios from 'axios';
 
-export const api = (env: ConfigParam) => {
-    const config = Endpoints(env);
+export class Api {
+    config: any;
+    constructor(env: ConfigParam) {
+        this.config = Endpoints(env);
+    }
+
     /**
      * @return Promise
      */
-    const getMap = () => {
-        return axios.get(config.getMap.url, { params: config.getMap.params })
+    getMap = () => {
+        return axios.get(this.config.getMap.url, { params: this.config.getMap.params })
     }
 
     /**
@@ -16,11 +20,11 @@ export const api = (env: ConfigParam) => {
      * @param mapFromGather
      * @param mapObjects
      */
-    const setMap = (mapFromGather, mapObjects) => {
+    setMap = (mapFromGather, mapObjects) => {
         const mapData = mapFromGather.data;
         mapData.objects = mapObjects;
-        return axios.post(config.setMap.url, {
-            ...config.setMap.params,
+        return axios.post(this.config.setMap.url, {
+            ...this.config.setMap.params,
             mapContent: mapData
         });
     }
@@ -29,16 +33,15 @@ export const api = (env: ConfigParam) => {
      * @return Promise
      * @param image
      */
-    const uploadImages = (image) => {
+    uploadImages = (image) => {
         return axios
             .post(
-                config.uploadImages.url,
+                this.config.uploadImages.url,
                 {
                     bytes: image,
-                    spaceId: config.uploadImages.params.spaceId,
+                    spaceId: this.config.uploadImages.params.spaceId,
                 },
                 { maxContentLength: Infinity, maxBodyLength: Infinity }
             );
     }
-    return this;
 }

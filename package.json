@@ -1,6 +1,6 @@
 {
   "name": "@rowasc/xs-gather-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A small package to work with gather http APIs",
   "main": "./dist/api/gather.js",
   "types": "./dist/api/gather.d.ts",
