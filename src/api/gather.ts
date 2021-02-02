@@ -15,13 +15,7 @@ export class Api {
         return axios.get(
             this.config.getMap.url,
             { params: this.config.getMap.params }
-            )
-            .catch((e) => {
-                return {
-                    error: e,
-                    source: `gather.getMap`
-                }
-            });
+            );
     }
 
     /**
@@ -31,16 +25,14 @@ export class Api {
      */
     setMap = (mapFromGather, mapObjects) => {
         const mapData = mapFromGather.data;
+        if (!mapData || !mapObjects || !mapData.objects) {
+            return Promise.reject(new Error('Invalid objects at gather.setMap'));
+        }
         mapData.objects = mapObjects;
         return axios.post(this.config.setMap.url, {
             ...this.config.setMap.params,
             mapContent: mapData
-        }).catch((e) => {
-            return {
-                error: e,
-                source: `gather.setMap`
-            }
-        })
+        });
     }
 
     /**
@@ -56,12 +48,7 @@ export class Api {
                     spaceId: this.config.uploadImages.params.spaceId,
                 },
                 { maxContentLength: Infinity, maxBodyLength: Infinity }
-            ).catch((e) => {
-                return {
-                    error: e,
-                    source: `gather.uploadImages`
-                }
-            });
+            );
     }
     /**
      *
@@ -73,6 +60,6 @@ export class Api {
                 return this.setMap(result, objects);
             }).catch((e) => {
               return {error: e, source: 'gather.updateMap'};
-            })
+            });
     };
 }
