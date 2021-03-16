@@ -1,4 +1,4 @@
-import {Endpoints, ConfigParam} from '../endpoints';
+import { Endpoints, ConfigParam } from '../endpoints';
 
 import axios from 'axios';
 
@@ -9,13 +9,14 @@ export class Api {
     }
 
     /**
+     * get the Gather.town map from their HTTP API
      * @return Promise
      */
     getMap = () => {
         return axios.get(
             this.config.getMap.url,
             { params: this.config.getMap.params }
-            );
+        );
     }
 
     /**
@@ -47,13 +48,14 @@ export class Api {
                     bytes: image,
                     spaceId: this.config.uploadImages.params.spaceId,
                 },
+                // this is based on the gather.town example config
                 { maxContentLength: Infinity, maxBodyLength: Infinity }
             );
     }
     /**
      *
      * @param objects
-     */
+    */
     updateMap = (objects) => {
         return this.getMap()
             .then((result) => {

@@ -1,5 +1,3 @@
-import exp = require("constants");
-
 jest.mock('axios');
 import axios from 'axios';
 import { Api } from "./../src/api/gather";
