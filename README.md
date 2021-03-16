@@ -1,27 +1,25 @@
 # xs-gather-sdk
 
+A small, no-nonsense Gather.town SDK.
 
 ## What is this
-A tiny SDK to play with the Gather.town APIs while they (probably?) work on the new Web Sockets APIs :)  
+A tiny SDK to prototype ideas with the Gather.town APIs while we wait for their Web Sockets APIs. 
 
-## Is this a serious project, can I launch my startup withis
+## Can I launch my startup with this!?
 
-No. I made this for a toy project I am having fun with. I wanted to play with their APIs and practice Typescript. 
+No. I made this for a toy project I am having fun with. 
 
 You can read about how I used the tiny SDK, here https://rowasc.com/experiments/funemployment-log-1-gather-town/ . 
 
 
-## Using this SDK
+# Notes on using this SDK
 
 - Install it with `npm install rowasc/xs-gather-sdk --save`
-
-# Sample code 
-
-- Note: you will want some way to get your GATHER_X_X config data into the project. I'm using dotenv, but it's not required to do so.
+- You will need to get your GATHER_X_X config data into the project. I'm using dotenv, but it's not required to do so.
 - Since their official APIs may change, you may need to check https://www.notion.so/EXTERNAL-Gather-API-3bbf6c59325f40aca7ef5ce14c677444 for any changes.
 - Get your API key from https://gather.town/apiKeys
 
-### Required configuration
+## Required configuration
 The configuration is needed in your project. It's used to enable the SDK to connect to Gather.town
 
 ```dotenv
@@ -34,6 +32,7 @@ GATHER_BASE_URL="https://staging.gather.town/"
 LOCAL_HOST_CALLBACK="https://your-webserver/node"
 ```
 
+## Show me some code
 
 ```typescript
 // usage will vary depending on your setup
