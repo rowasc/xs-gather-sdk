@@ -4,9 +4,9 @@
 ## What is this
 A tiny SDK to play with the Gather.town APIs while they (probably?) work on the new Web Sockets APIs :)  
 
-## Is this a serious project.
+## Is this a serious project, can I launch my startup withis
 
-No, it may be one at some point, but right now it's a toy. I wanted to play with their APIs and practice my Typescript :shrugs: 
+No. I made this for a toy project I am having fun with. I wanted to play with their APIs and practice Typescript. 
 
 You can read about how I used the tiny SDK, here https://rowasc.com/experiments/funemployment-log-1-gather-town/ . 
 
@@ -88,4 +88,18 @@ const addToMap = (objects) =>  {
             console.error(err);
         });
 }
+```
+## What else can I do? 
+- You can the type definitions to avoid having to guess the object type ids
+
+```typescript
+    const types =  require('@rowasc/xs-gather-sdk/dist/objectTypes').default;
+    const videoTypeID = types('video').id;
+```
+
+- You can use the endpoint definitions provided as a shortcut to create your own methods
+
+```typescript
+    const endpoints =  require('@rowasc/xs-gather-sdk/dist/endpoints').default;
+    const getMapEndpot = endpoints.getMap;
 ```
