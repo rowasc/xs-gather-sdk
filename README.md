@@ -6,6 +6,8 @@
 
 A small, no-nonsense Gather.town SDK.
 
+![My Gather.town avatar, interacting with Gather endpoint posters](gatherScreenshot.png)
+
 ## What is this
 A tiny SDK to prototype ideas with the Gather.town APIs while we wait for their Web Sockets APIs. 
 
