@@ -1,3 +1,5 @@
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/rowasc/xs-gather-sdk/Node.js%20CI?style=flat-square)
+
 # xs-gather-sdk
 
 A small, no-nonsense Gather.town SDK.
